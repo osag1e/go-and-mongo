@@ -23,7 +23,11 @@ func main() {
 	if err != nil {
 		log.Fatal("Could not connect to MongoDB:", err)
 	}
-	defer client.Disconnect(context.TODO())
+	defer func() {
+		if err := client.Disconnect(context.TODO()); err != nil {
+			log.Printf("Error disconnecting from MongoDB: %v", err)
+		}
+	}()
 
 	router := initializeRouter(client)
 	listenAddr := os.Getenv("HTTP_LISTEN_ADDRESS")

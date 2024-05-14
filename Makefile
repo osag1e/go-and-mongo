@@ -5,6 +5,13 @@ run: build-api
 	@./bin/api
 
 
+lint: 
+	@golangci-lint run ./... 
+
+cyclomatic:
+	@gocyclo -over 7 . 
+
+
 clean: 
 	@rm -rf bin
 
