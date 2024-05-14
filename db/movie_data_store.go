@@ -65,7 +65,7 @@ func (s *MongoMovieDataStore) DeleteMovie(ctx context.Context, id string) error 
 	if err != nil {
 		return err
 	}
-	_, err = s.coll.DeleteOne(ctx, bson.M{"id": oid})
+	_, err = s.coll.DeleteOne(ctx, bson.M{"_id": oid})
 	if err != nil {
 		return err
 	}
