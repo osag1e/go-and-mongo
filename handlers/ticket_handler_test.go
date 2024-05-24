@@ -18,14 +18,14 @@ func TestPostMovie(t *testing.T) {
 
 	r := chi.NewRouter()
 	movieHandler := NewMovieTicketHandler(tdb.Movie)
-	r.Post("/", movieHandler.HandlePostMovie)
+	r.Post("/movie/ticket", movieHandler.HandlePostMovie)
 
 	params := model.MovieTicket{
 		Title: "Deadpool",
 		Price: 27.99,
 	}
 	b, _ := json.Marshal(params)
-	req := httptest.NewRequest("POST", "/", bytes.NewReader(b))
+	req := httptest.NewRequest("POST", "/movie/ticket", bytes.NewReader(b))
 	req.Header.Add("Content-Type", "application/json")
 	w := httptest.NewRecorder()
 
