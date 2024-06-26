@@ -12,7 +12,7 @@ import (
 
 const (
 	MongoDBNameEnvName = "MONGO_DB_NAME"
-  movieCollection = "movies"
+	movieCollection    = "movies"
 )
 
 type DataStore struct {

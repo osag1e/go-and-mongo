@@ -11,7 +11,9 @@ make clean
 ```
 
 ## Project environment variables
-- HTTP_LISTEN_ADDRESS=
-- MONGO_DB_NAME=
-- MONGO_DB_URL=
-- MONGO_DB_URL_TEST=
+```
+HTTP_LISTEN_ADDRESS=
+MONGO_DB_NAME=
+MONGO_DB_URI=
+MONGO_DB_URI_TEST=
+```
