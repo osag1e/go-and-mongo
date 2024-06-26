@@ -16,7 +16,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	mongoDBURL := os.Getenv("MONGO_DB_URL")
+	mongoDBURL := os.Getenv("MONGO_DB_URI")
 
 	clientOptions := options.Client().ApplyURI(mongoDBURL)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
