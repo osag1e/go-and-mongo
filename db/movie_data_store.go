@@ -12,13 +12,12 @@ import (
 
 const (
 	MongoDBNameEnvName = "MONGO_DB_NAME"
+  movieCollection = "movies"
 )
 
 type DataStore struct {
 	Movie MovieDataStore
 }
-
-const movieCollection = "movies"
 
 type MovieDataStore interface {
 	InsertMovie(context.Context, *model.MovieTicket) (*model.MovieTicket, error)
